@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Generated build and test output
+dist/
+coverage/
+*.tsbuildinfo
+playwright-report/
+test-results/
+
+# Environment and local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local design reviews, screenshots, and one-off work scripts
+/design/
+/work/
+/emailjs/preview.html
+
+# Tool caches and logs
+.vite/
+.cache/
+*.log
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
