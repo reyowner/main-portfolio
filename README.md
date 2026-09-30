@@ -50,3 +50,7 @@ The studio is a procedural local concept; no final 3D asset export or production
 See [asset provenance](THIRD_PARTY_NOTICES.md). The downloadable résumé and supplied project marks are included intentionally. Client portfolio titles use descriptive labels rather than client names.
 
 Dependencies, generated builds, environment files, local review artifacts, and one-off working scripts are excluded through `.gitignore`. `package-lock.json` is committed for reproducible installs.
+
+## Vercel Web Analytics
+
+`@vercel/analytics/react` is mounted once at the application root in `src/main.tsx`. Enable Web Analytics in the Vercel project dashboard, then deploy the branch containing this integration. Production visitor and page-view data appears after visitors load that deployment. Development mode does not collect analytics. No custom events or contact-form values are sent by this integration.
