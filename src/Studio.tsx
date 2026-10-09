@@ -190,6 +190,7 @@ export default function Studio(props: Props) {
     labelHost.className = "hotspot-layer";
     const hotspots: { id: string; button: HTMLButtonElement }[] = [];
     const labels: Record<string, string> = {
+      blokisle: "Blokisle",
       blackrose: "Black Rose",
       predikta: "PREDIKTA",
       portfolio: "Client portfolios",

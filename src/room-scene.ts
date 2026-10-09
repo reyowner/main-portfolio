@@ -4,6 +4,7 @@ import { studioLighting } from "./room-lighting";
 
 // Procedural concept geometry shared by the preview and review projections.
 export const roomTargets: Record<string, THREE.Vector3> = {
+  blokisle: new THREE.Vector3(-2.55, 1.48, 1.85),
   blackrose: new THREE.Vector3(2.62, 2.25, -1.7),
   predikta: new THREE.Vector3(-0.62, 2.25, -1.55),
   portfolio: new THREE.Vector3(2.55, 1.65, 1.48),
@@ -608,6 +609,23 @@ export function createRoom() {
       mats.teal,
     );
   }
+
+  const planner = prop("blokisle", [-2.55, 0, 1.85]);
+  box(planner, [1.1, .08, .85], [0, .78, 0], mats.wood, .04, "planner-table");
+  for (const x of [-.4, .4]) for (const z of [-.28, .28])
+    box(planner, [.06, .74, .06], [x, .37, z], mats.trim);
+  box(planner, [.85, .06, .45], [0, .85, 0], mats.teal, .03);
+  box(planner, [.88, .8, .07], [0, 1.24, -.12], mats.beige, .035, "time-block-calendar");
+  const plannerScreen = texture(660, 540, ctx => {
+    ctx.fillStyle = C.dark; ctx.fillRect(0, 0, 660, 540);
+    ctx.fillStyle = C.pale; ctx.font = '32px sans-serif'; ctx.fillText('BLOKISLE', 35, 63);
+    ctx.font = '19px sans-serif'; ctx.fillStyle = '#9fbbad'; ctx.fillText('A little space to focus.', 35, 98);
+    ['PLAN', 'FOCUS', 'RECHARGE'].forEach((text, i) => {
+      ctx.fillStyle = [C.teal, '#455e66', '#77715e'][i]; ctx.fillRect(35, 135 + i * 120, 590, 98);
+      ctx.fillStyle = C.pale; ctx.font = '24px sans-serif'; ctx.fillText(text, 62, 194 + i * 120);
+    });
+  });
+  face(planner, .79, .65, [0, 1.24, -.079], plannerScreen);
 
   const display = prop("portfolio", [2.52, 0, 1.47]);
   box(
