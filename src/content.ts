@@ -14,6 +14,23 @@ export type Exhibit = {
 // Factual content transcribed from the supplied RReoner_CV.pdf. No invented impact metrics.
 export const exhibits: Exhibit[] = [
   {
+    id: "blokisle",
+    title: "Blokisle",
+    kind: "Project",
+    object: "The time-block calendar",
+    period: "October 2026",
+    role: "Personal project · Full-stack development",
+    summary: "Give your day a clear shape, one block at a time.",
+    details: [
+      "Built a personal time-block planner for teachers and anyone who prefers a structured day, with reusable routines, daily objectives, task urgency, and reminders.",
+      "Created an interactive Three.js studio that responds to the current time block, with task progress and optional Pomodoro or continuous focus sessions, pause, and break controls.",
+      "Connected Google sign-in and Firestore sync across devices, with local caching and optional two-way Google Calendar event sync through a Cloudflare service.",
+      "Packaged the app for Android with Capacitor and scheduled local reminders, alongside responsive web layouts and mobile bottom sheets.",
+    ],
+    stack: ["React", "TypeScript", "Three.js", "React Three Fiber", "Firebase", "Cloudflare Workers", "Capacitor"],
+    link: "https://blokisle.vercel.app",
+  },
+  {
     id: "blackrose",
     title: "Black Rose",
     kind: "Project",

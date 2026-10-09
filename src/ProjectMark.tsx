@@ -1,4 +1,5 @@
 export default function ProjectMark({ id }: { id: string }) {
+  if (id === "blokisle") return <img src="/images/blokisle.svg" alt="" />;
   if (id === "blackrose" || id === "predikta")
     return (
       <img
